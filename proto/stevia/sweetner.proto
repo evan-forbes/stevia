@@ -1,0 +1,34 @@
+syntax = "proto3";
+package evanforbes.stevia.stevia;
+
+option go_package = "github.com/evan-forbes/stevia/x/stevia/types";
+
+import "gogoproto/gogo.proto";
+
+message Sweetner {
+  string creator = 1;
+  string id = 2;
+  uint64 calories = 3; 
+  bool organic = 4; 
+  string source = 5; 
+}
+
+message MsgCreateSweetner {
+  string creator = 1;
+  uint64 calories = 2; 
+  bool organic = 3; 
+  string source = 4; 
+}
+
+message MsgUpdateSweetner {
+  string creator = 1;
+  string id = 2;
+  uint64 calories = 3; 
+  bool organic = 4; 
+  string source = 5; 
+}
+
+message MsgDeleteSweetner {
+  string creator = 1;
+  string id = 2;
+}

@@ -4,12 +4,36 @@ package evanforbes.stevia.stevia;
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 // this line is used by starport scaffolding # 1
+import "stevia/sweetner.proto";
 
 option go_package = "github.com/evan-forbes/stevia/x/stevia/types";
 
 // Query defines the gRPC querier service.
 service Query {
     // this line is used by starport scaffolding # 2
+	rpc Sweetner(QueryGetSweetnerRequest) returns (QueryGetSweetnerResponse) {
+		option (google.api.http).get = "/evan-forbes/stevia/stevia/sweetner/{id}";
+	}
+	rpc SweetnerAll(QueryAllSweetnerRequest) returns (QueryAllSweetnerResponse) {
+		option (google.api.http).get = "/evan-forbes/stevia/stevia/sweetner";
+	}
+
 }
 
 // this line is used by starport scaffolding # 3
+message QueryGetSweetnerRequest {
+	string id = 1;
+}
+
+message QueryGetSweetnerResponse {
+	Sweetner Sweetner = 1;
+}
+
+message QueryAllSweetnerRequest {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllSweetnerResponse {
+	repeated Sweetner Sweetner = 1;
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
