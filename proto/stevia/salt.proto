@@ -1,0 +1,10 @@
+syntax = "proto3";
+package evanforbes.stevia.stevia;
+
+option go_package = "github.com/evan-forbes/stevia/x/stevia/types";
+
+import "gogoproto/gogo.proto";
+
+message Shaker {
+    uint64 size = 1;
+}

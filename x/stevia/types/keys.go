@@ -17,6 +17,12 @@ const (
 	MemStoreKey = "mem_capability"
 )
 
+// what is the point of this func??
 func KeyPrefix(p string) []byte {
 	return []byte(p)
 }
+
+const (
+	SweetnerKey      = "Sweetner-value-"
+	SweetnerCountKey = "Sweetner-count-"
+)

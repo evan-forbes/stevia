@@ -2,11 +2,13 @@ syntax = "proto3";
 package evanforbes.stevia.stevia;
 
 // this line is used by starport scaffolding # genesis/proto/import
+import "stevia/sweetner.proto";
 
 option go_package = "github.com/evan-forbes/stevia/x/stevia/types";
 
 // GenesisState defines the capability module's genesis state.
 message GenesisState {
     // this line is used by starport scaffolding # genesis/proto/state
+		repeated Sweetner sweetnerList = 1; // this line is used by starport scaffolding # genesis/proto/stateField
 }
 
